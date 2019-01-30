@@ -1,22 +1,18 @@
 class BinaryTreeDFS {
 	search(node, value) {
-		if (!node) {
-			return false;
-		}
+		if (!node) return false
 
-		if (node.value === value) {
-			return node;
-		}
+		if (node.value === value) return node
 
-		const leftFound = this.search(node.left, value);
-		if (leftFound) return leftFound;
+		const leftFound = this.search(node.left, value)
+		if (leftFound) return leftFound
 
-		const rightFound = this.search(node.right, value);
-		if (rightFound) return rightFound;
+		const rightFound = this.search(node.right, value)
+		if (rightFound) return rightFound
 	}
 
 	run(tree, value) {
-		return this.search(tree, value);
+		return this.search(tree, value)
 	}
 }
 
@@ -63,7 +59,7 @@ let tree = {
 			right: null,
 		},
 	},
-};
+}
 
-const btdfs = new BinaryTreeDFS();
-btdfs.run(tree, 9);
+const btdfs = new BinaryTreeDFS()
+btdfs.run(tree, 9)

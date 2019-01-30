@@ -1,19 +1,13 @@
 class TreeDFS {
     search(node, value) {
-        if (node.value === value) {
-            return node;
-        }
+        if (node.value === value) return node
 
-        if (!node.children.length) {
-            return false;
-        }
+        if (!node.children.length) return false
 
         for (let i=0; i < node.children.length; i++) {
-            const nodeFound = this.search(node.children[i], value);
+            const nodeFound = this.search(node.children[i], value)
 
-            if (nodeFound) {
-                return nodeFound;
-            }
+            if (nodeFound) return nodeFound
         }
     }
 
@@ -47,7 +41,7 @@ let tree = {
             ]
         }
     ]
-};
+}
 
-const tdfs = new TreeDFS();
-tdfs.run(tree, 11);
+const tdfs = new TreeDFS()
+tdfs.run(tree, 11)
